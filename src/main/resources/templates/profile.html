@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/profileStyle.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logout">
+            <a th:href="@{/logout}" class="logoutLink">Log Out <i class='bx bx-door-open'></i></a>
+        </div>
+        <div class="logo">
+            <h1>CinemaStar</h1>
+        </div>
+        <div class="balance">
+
+            <p th:if="${user.balance != null}" th:text="'Your balance is: ' + ${user.balance} + '$'"></p>
+            <p th:if="${user.balance == null}">Your balance is: 0$</p>
+            <div class="hiddenBalance">
+                <div class="hiddenData">
+                    <a href="#">Add to Balance</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="mainPage">
+    <div class="container">
+        <div class="profileHeader">
+            <div class="fileForm">
+                <form th:action="@{/practice/newImage}" method="post" enctype="multipart/form-data">
+                    <input type="file" name="imageFile">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div class="pfp">
+                <img th:src="${imageSrc}" alt="defPFP">
+                <div class="editBlock">
+                    <div class="editBlockContent">
+                        <p id="edit">Edit image</p>
+                    </div>
+                </div>
+            </div>
+            <h1 th:text="${user.username}"></h1>
+        </div>
+        <div class="profileBody">
+            <div class="bodyButtons">
+                <button id="filmButton" class="tabButton" onclick="openTab(event, '.filmBlock')">Films</button>
+                <button id="reviewButton" class="tabButton" onclick="openTab(event, '.reviewBlock')">Reviews</button>
+                <button id="friendButton" class="tabButton" onclick="openTab(event, '.friendBlock')">Friends</button>
+            </div>
+            <div class="bodyBlocks">
+                <div class="bodyBlock filmBlock">
+                    <div th:if="${user.getBoughtFilms() != null}" th:each="film, filmElement : ${user.getBoughtFilms()}">
+                        <p th:text="${film.getTitle()}"></p>
+                    </div>
+                    <div th:if="${user.getBoughtFilms() == null}">
+                        <p>No films bought</p>
+                    </div>
+                </div>
+                <div class="bodyBlock reviewBlock">
+                    <div th:if="${user.getReviews() != null}" th:each="review, reviewElement : ${user.getReviews()}">
+                        <p th:text="${review.getContent()}"></p>
+                        <p th:text="${review.getGrade()}"></p>
+                    </div>
+                    <div th:if="${user.getReviews().isEmpty()}">
+                        <p>This user has no reviews</p>
+                    </div>
+                </div>
+                <div class="bodyBlock friendBlock">
+                    <div class="friendWrapper">
+                        <div class="friend">
+                            <div class="image-wrapper">
+                                <img src="#" alt="default_pfp">
+                            </div>
+                            <h4>username</h4>
+                        </div>
+                        <div>
+                            <p onclick="addFriendBlock()">+ Add friend</p>
+                            <div class="hiddenSearch">
+                                <input type="text" id="friendName" placeholder="Enter username">
+                                <input type="submit" value="Send request" id="Submit" onclick="sendFriendInfo('friendName')">
+                                <div class="hiddenError">
+                                    <p>User does not exist</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="ourInfo">
+        <ul>
+            <li>Contact Us</li>
+            <li>About Us</li>
+            <li>Policy</li>
+        </ul>
+    </div>
+    <div class="production">
+        <ul>
+            <li>Partners</li>
+            <li>Privacy Policy</li>
+            <li>Buy Gift Cards</li>
+        </ul>
+    </div>
+    <div class="icons">
+        <i class='bx bxl-facebook-circle'></i>
+        <i class='bx bxl-twitter' ></i>
+        <i class='bx bxl-instagram-alt' ></i>
+    </div>
+</footer>
+
+<script src="/js/profile.js"></script>
+</body>
+</html>

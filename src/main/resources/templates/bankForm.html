@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/bankStyle.css">
+</head>
+<body>
+    <div class="container">
+        <input type="hidden" th:value="${price}" id="priceHelper">
+        <input type="hidden" th:value="${filmId}" id="idHelper">
+        <input type="text" class="number" maxlength="16" placeholder="Card number">
+        <div class="dataContainer">
+            <input type="text" class="cvc" maxlength="3" placeholder="CVC">
+            <input type="text" class="date" maxlength="5" placeholder="Date">
+        </div>
+        <button id="payButton">Pay</button>
+    </div>
+    <script src="/js/payment.js"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+html {
+    font-family: monospace;
+}
+
+header > nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-inline: 20px;
+    background-color: black;
+    box-shadow: 0 0 10px black;
+}
+
+ul {
+    list-style: none;
+}
+
+@keyframes scrollAnimation {
+    to {
+        left: -200px
+    }
+}
+
+.logo {
+    color: white;
+}
+
+.registerButton {
+    background-color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    font-family: monospace;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.loginButton {
+    background-color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.registerButton:hover {
+    background-color: #e1e1e1;
+}
+
+.loginButton:hover {
+    background-color: #e1e1e1;
+}
+
+.mainBody {
+    background-image: linear-gradient(to bottom right, red, blue);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.mainPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.greeting {
+    font-size: 50px;
+    color: white;
+    text-shadow: 5px 6px 0 black;
+}
+
+.item {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 100%;
+    animation-name: scrollAnimation;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.wrapper {
+    position: relative;
+    width: 80%;
+    height: 180px;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+}
+
+.item > img {
+    height: 100px;
+}
+
+.item1 {
+    animation-delay: calc((30s / 6) * (6 - 1) * -1);
+}
+
+.item2 {
+    animation-delay: calc((30s / 6) * (6 - 2) * -1);
+}
+
+.item3 {
+    animation-delay: calc((30s / 6) * (6 - 3) * -1);
+}
+
+.item4 {
+    animation-delay: calc((30s / 6) * (6 - 4) * -1);
+}
+
+.item6 {
+    animation-delay: calc((30s / 6) * (6 - 5) * -1);
+}
+
+.item7 {
+    animation-delay: calc((30s / 6) * (6 - 6) * -1);
+}
+
+.aboutUs {
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    padding-block: 40px;
+    width: 100%;
+}
+
+.enjoyText {
+    width: 500px;
+}
+
+/*.enjoyImage {*/
+/*    width: 50%;*/
+/*}*/
+
+.watchEverywhere {
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    padding-block: 40px;
+    margin-top: 80px;
+    width: 100%;
+}
+
+.watchText {
+    width: 500px;
+}
+
+footer {
+    background-color: black;
+    margin-top: 80px;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    padding-block: 20px;
+    font-size: 20px;
+}
+
+.ourInfo {
+    grid-column-start: 1;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.production {
+    grid-column-start: 2;
+    color: white;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons {
+    grid-column-start: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bx {
+    color: white;
+    font-size: 35px;
+    padding-right: 10px;
+}

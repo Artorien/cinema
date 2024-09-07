@@ -1,0 +1,240 @@
+html {
+    font-family: monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom right, red, blue);
+}
+
+header > nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-inline: 20px;
+    background-color: black;
+    box-shadow: 0 0 10px black;
+    color: white;
+}
+
+footer {
+    background-color: black;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    padding-block: 20px;
+    font-size: 20px;
+}
+
+button {
+    font-size: 30px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    border-bottom: 1px solid white;
+}
+
+.mainPage {
+
+    margin: 90px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: black;
+    width: 70%;
+    height: 80%;
+    padding-block: 50px;
+    padding-inline: 30px;
+}
+
+.ourInfo {
+    grid-column-start: 1;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.production {
+    grid-column-start: 2;
+    color: white;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons {
+    grid-column-start: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.bx {
+    color: white;
+    font-size: 35px;
+    padding-right: 10px;
+}
+
+.profileHeader {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid white;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.pfp {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+.pfp > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.profileBody {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bodyButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 50px;
+}
+
+.bodyBlocks {
+    width: 100%;
+}
+
+.bodyBlock {
+    width: 100%;
+    height: 300px;
+    display: none;
+    color: white;
+}
+
+.logout a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+.balance {
+    position: relative;
+}
+
+.hiddenBalance {
+    display: none;
+    position: absolute;
+    background-color: black;
+    width: 100%;
+}
+
+.hiddenData {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 20px;
+}
+
+.hiddenData a {
+    color: white;
+    font-family: monospace;
+    text-decoration: none;
+}
+
+.editBlock {
+    display: none;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-color: rgba(128, 128, 128, 0.5);
+
+    position: absolute;
+    top: 0;
+}
+
+.editBlockContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 20px;
+}
+
+.fileForm {
+    position: absolute;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    z-index: 1;
+    display: none;
+    box-shadow: 0 0 20px black;
+}
+
+#edit {
+    cursor: pointer;
+}
+
+.active {
+    border-bottom: 1px solid white;
+}
+
+.image-wrapper {
+    width: 50px;
+    height: 50px;
+}
+
+.image-wrapper > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.friendWrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+}
+
+.friend {
+    display: flex;
+    grid-column-start: 2;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid white;
+    padding-block: 20px;
+}
+
+.hiddenSearch {
+    display: none;
+}
+
+.hiddenError {
+    display: none;
+}

@@ -1,0 +1,341 @@
+html {
+    font-family: monospace;
+}
+
+header > nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-inline: 20px;
+    background-color: black;
+    box-shadow: 0 0 10px black;
+}
+
+.userInfoImgReview {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.userInfoImgReview > img {
+    width: 20px;
+    height: 20px;
+}
+
+.userInfoImg {
+    width: 40px;
+    height: 40px;
+}
+
+.userInfoImg > img {
+    width: 40px;
+    height: 40px;
+}
+
+ul {
+    list-style: none;
+}
+
+.logo {
+    color: white;
+}
+
+.mainBody {
+    background-image: linear-gradient(to bottom right, red, blue);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 50px;
+    flex-direction: column;
+}
+
+.filmInfo {
+    padding: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.filmInfo h3 {
+    color: #ffcc00;
+    font-family: monospace;
+}
+
+.filmContainer {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: black;
+    color: white;
+    border: 6px dotted rgb(0, 140, 255);
+}
+
+.videoContainer {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding-block: 100px;
+    border-inline: 6px dotted rgb(0, 140, 255);
+    border-bottom: 6px dotted rgb(0, 140, 255);
+}
+
+footer {
+    background-color: black;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    padding-block: 20px;
+    font-size: 20px;
+}
+
+.ourInfo {
+    grid-column-start: 1;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.production {
+    grid-column-start: 2;
+    color: white;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons {
+    grid-column-start: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bx {
+    color: white;
+    font-size: 35px;
+    padding-right: 10px;
+}
+
+.userInfo {
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 150px;
+    position: relative;
+}
+
+.userInfo > img {
+    width: 40px;
+    height: 40px;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+}
+
+.review {
+    color: white;
+    border: 1px solid white;
+    margin-top: 50px;
+}
+
+.flex-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 25px;
+    border: 1px solid white;
+    position: relative;
+}
+
+.flex-header p {
+    font-family: monospace;
+    font-size: 15px;
+    color: #ffcc00;
+}
+
+.review-header img {
+    width: 20px;
+    height: 20px;
+}
+
+.review-body {
+    padding-inline: 25px;
+}
+
+.reviews-h1 {
+    color: white;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.reviews-h1 h1 {
+    margin: 0;
+}
+
+.review-form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.bx {
+    cursor: pointer;
+}
+
+#reviewOfTheUser {
+    resize: none;
+    width: 600px;
+    margin-bottom: 50px;
+    font-size: 20px;
+}
+
+#submitButton {
+    font-size: 20px;
+    font-family: monospace;
+    padding: 10px 20px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.imageBlock > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.imageBlock {
+    width: 550px;
+}
+
+.selected {
+    color: #ffcc00;
+}
+
+.utilities {
+    position: absolute;
+    display: none;
+    right: 10%;
+    top: 22%;
+}
+
+.utilities > i {
+    padding: 0;
+    font-size: 25px;
+}
+
+.watchButton {
+    margin-top: 13px;
+    font-size: 15px;
+    width: 150px;
+    padding: 15px 5px;
+    font-family: monospace;
+    background-color: transparent;
+    color: white;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.watchButton:hover {
+    background-color: white;
+    color: black;
+    transition: all 0.5s;
+}
+
+.libraryButton {
+    margin-top: 13px;
+    font-size: 15px;
+    width: 200px;
+    padding: 15px 5px;
+    font-family: monospace;
+    background-color: transparent;
+    color: white;
+    transition: all 0.5s;
+    cursor: pointer;
+    display: none;
+}
+
+.libraryButton:hover {
+    background-color: white;
+    color: black;
+    transition: all 0.5s;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.bankButton {
+    margin-top: 13px;
+    font-size: 15px;
+    padding: 15px 20px;
+    font-family: monospace;
+    background-color: transparent;
+    color: white;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.bankButton a {
+    text-decoration: none;
+    color: white;
+}
+
+.bankButton:hover {
+    background-color: white;
+    transition: all 0.5s;
+}
+
+.bankButton a:hover {
+    color: black;
+}
+
+.userMenu {
+    position: absolute;
+    display: none;
+    width: 100%;
+    top: 50px;
+    padding-block: 10px;
+    background-color: black;
+    box-shadow: 0 0 30px white;
+    border-radius: 5px;
+}
+
+.userMenuLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 20px;
+}
+
+.userMenuLinks a {
+    text-decoration: none;
+    color: white;
+    font-family: monospace;
+    margin-block: 10px;
+}

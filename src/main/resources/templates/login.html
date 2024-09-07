@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/style/registrationStyle.css">
+    <link href="https://fonts.cdnfonts.com/css/sporting" rel="stylesheet">
+</head>
+<body>
+    <h1>Login</h1>
+    <div class="formStyle">
+        <form class="form" th:action="@{/practice/login}" method="post">
+            <div th:if="${error}" class="error">
+                <p th:text="${error}"></p>
+            </div>
+            <div>
+                <input type="text" name="username" id="username" placeholder="Enter your username">
+            </div>
+            <div th:if="${usernameEmpty}" class="error">
+                <p style="margin-top: 0" th:text="${usernameEmpty}"></p>
+            </div>
+            <div>
+                <input type="password" name="password" id="password" placeholder="Enter your password">
+            </div>
+            <div th:if="${passwordEmpty}" class="error">
+                <p style="margin-top: 0" th:text="${passwordEmpty}"></p>
+            </div>
+            <button class="submitButton" type="submit">Log In</button>
+            <div class="break">
+                <p>OR</p>
+            </div>
+        </form>
+        <button class="backButton">Go back</button>
+    </div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>

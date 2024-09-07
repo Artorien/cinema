@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Film page</title>
+    <link rel="stylesheet" href="/style/styleFilm.css">
+    <link href="https://fonts.cdnfonts.com/css/sporting" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="mainBody">
+<header>
+    <nav>
+        <div class="logo">
+            <h1>CinemaStar</h1>
+        </div>
+        <div>
+            <div class="userInfo" th:object="${user}">
+                <img th:src="${imageSrc}" class="userInfoImg" alt="pfp">
+                <h4 th:text="${user.getUsername()}" class="username"></h4>
+                <div class="userMenu">
+                    <div class="userMenuLinks">
+                        <a th:href="@{/practice/profile}">Profile</a>
+                        <a th:href="@{/logout}">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="mainPage">
+    <div class="container">
+        <div class="filmContainer" th:object="${film}">
+            <div class="imageBlock">
+                <img th:src="${film.poster}" alt="image1">
+            </div>
+            <div class="filmInfo">
+                <div class="usernameHelper" style="display: none" th:text="${user.username}"></div>
+                <input type="hidden" th:value="${film.getId()}" id="hiddenFilmId">
+                <h2 th:text="${film.title}"></h2>
+                <p th:text="${film.description}"></p>
+                <h3 th:text="'Rating: ' + ${film.score}"></h3>
+                <div class="buttons">
+                    <button class="watchButton">Watch for 4$</button>
+                    <button class="libraryButton">Go to the Library</button>
+                    <input type="hidden" th:value="${film.getPrice()}" id="priceHelper">
+                    <button class="bankButton" style="display: none"><a th:href="@{/practice/bankForm/{id}/{price}(id=${film.id}, price=${film.price})}">
+                        Add money to balance
+                    </a></button>
+                </div>
+            </div>
+        </div>
+        <div class="videoContainer">
+            <div class="Area">
+                <iframe width="600px" height="300px"
+                    th:src="'https://www.youtube.com/embed/' + ${film.trailer}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                <div class="reviews">
+                    <div class="reviews-h1">
+                        <h1>Reviews</h1>
+                    </div>
+                    <div class="review" th:each="reviewBlock, reviewEl : ${reviews}">
+                        <div id="helperReview" th:text="${reviewEl.index}" style="display: none"></div>
+                        <div class="flex-header">
+                            <div class="utilities">
+                                <i class='bx bx-trash-alt'></i>
+                                <i class='bx bx-edit-alt' ></i>
+                            </div>
+                            <div class="review-header">
+                                <div id="helper" th:text="${reviewEl.index}" style="display: none"></div>
+                                <h5 th:text="${reviewBlock.getUser.getUsername()}" id="userOfTheReview"></h5>
+                                <img th:src="${imageSrc}" class="userInfoImgReview" alt="pfp">
+                            </div>
+                            <p th:text="${reviewBlock.getGrade()}"></p>
+                        </div>
+                        <div class="review-body">
+                            <p th:text="${reviewBlock.getContent()}"></p>
+                        </div>
+                    </div>
+                        <div class="review-form">
+                            <div class="stars">
+                                <i class='bx bxs-star' data-value="1"></i>
+                                <i class='bx bxs-star' data-value="2"></i>
+                                <i class='bx bxs-star' data-value="3"></i>
+                                <i class='bx bxs-star' data-value="4"></i>
+                                <i class='bx bxs-star' data-value="5"></i>
+                                <i class='bx bxs-star' data-value="6"></i>
+                                <i class='bx bxs-star' data-value="7"></i>
+                                <i class='bx bxs-star' data-value="8"></i>
+                                <i class='bx bxs-star' data-value="9"></i>
+                                <i class='bx bxs-star' data-value="10"></i>
+                            </div>
+                            <form id="review-form" th:action="@{/practice/review}" method="post">
+                                <input type="hidden" th:value="${film.getId()}" id="filmId">
+                                <textarea name="review" id="reviewOfTheUser" rows="10" placeholder="Add your review here..."></textarea><br>
+                                <input type="submit" id="submitButton" value="Submit">
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="ourInfo">
+        <ul>
+            <li>Contact Us</li>
+            <li>About Us</li>
+            <li>Policy</li>
+        </ul>
+    </div>
+    <div class="production">
+        <ul>
+            <li>Partners</li>
+            <li>Privacy Policy</li>
+            <li>Buy Gift Cards</li>
+        </ul>
+    </div>
+    <div class="icons">
+        <i class='bx bxl-facebook-circle'></i>
+        <i class='bx bxl-twitter' ></i>
+        <i class='bx bxl-instagram-alt' ></i>
+    </div>
+</footer>
+
+ <script src="/js/filmPage.js" defer></script>
+</body>
+</html>

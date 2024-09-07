@@ -1,0 +1,45 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(53, 53, 53);
+}
+
+input {
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;align-items: center;
+    flex-direction: column;
+}
+
+.dataContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.cvc {
+    width: 25%;
+}
+
+.date {
+    width: 25%;
+}
+
+#payButton {
+    padding: 10px;
+    font-size: 20px;
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+}

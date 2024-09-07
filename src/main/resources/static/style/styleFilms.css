@@ -1,0 +1,186 @@
+html {
+    font-family: monospace;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header > nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-inline: 20px;
+    background-color: black;
+    box-shadow: 0 0 10px black;
+}
+
+ul {
+    list-style: none;
+}
+
+.logo {
+    color: white;
+}
+
+.mainBody {
+    background-image: linear-gradient(to bottom right, red, blue);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.mainPage {
+    display: grid;
+    grid-template-columns: 0.3fr 2fr 0.3fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 50px;
+    gap: 30px;
+}
+
+.group1 {
+    display: grid;
+    grid-row-start: 1;
+    grid-column-start: 2;
+}
+
+.group2 {
+    display: grid;
+    grid-row-start: 2;
+    grid-column-start: 2;
+}
+
+.group3 {
+    display: grid;
+    grid-row-start: 3;
+    grid-column-start: 2;
+}
+
+.group1flex, .group2flex, .group3flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.imageblock > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.buttonBlock > button {
+    background-color: white;
+    font-size: 15px;
+    padding: 5px 10px;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.imageblock {
+    width: 200px;
+    height: 300px;
+}
+
+.item {
+    background-color: black;
+    width: 250px;
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 6px 7px 2px rgb(246, 38, 187);
+    border: 6px dotted rgb(0, 140, 255);
+}
+
+.buttonBlock {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+footer {
+    background-color: black;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    padding-block: 20px;
+    font-size: 20px;
+}
+
+.ourInfo {
+    grid-column-start: 1;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.production {
+    grid-column-start: 2;
+    color: white;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons {
+    grid-column-start: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bx {
+    color: white;
+    font-size: 35px;
+    padding-right: 10px;
+}
+
+.userInfo {
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 150px;
+    position: relative;
+}
+
+.userInfoImg {
+    width: 40px;
+    height: 40px;
+}
+
+.userInfoImg > img{
+    width: 40px;
+    height: 40px;
+}
+
+.userMenu {
+    position: absolute;
+    display: none;
+    background-color: black;
+    width: 100%;
+    top: 50px;
+    box-shadow: 0 0 30px white;
+    border-radius: 5px;
+}
+
+.userMenuLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 20px;
+}
+
+.userMenuLinks a {
+    text-decoration: none;
+    color: white;
+    font-family: monospace;
+    margin-block: 10px;
+}

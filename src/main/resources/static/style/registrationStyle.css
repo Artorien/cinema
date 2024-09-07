@@ -1,0 +1,82 @@
+html {
+    font-family: monospace;
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom right, red, blue);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+button {
+    font-size: 20px;
+    font-family: monospace;
+    padding: 10px 20px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.formStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: auto;
+    background-color: black;
+    box-shadow: 6px 7px 2px rgb(242, 52, 52);
+    border: 6px dotted rgb(0, 140, 255);
+    padding: 40px;
+}
+
+.form {
+    width: 330px;
+}
+
+#username {
+    font-family: monospace;
+    font-size: 20px;
+    margin-bottom: 15px;
+    width: 97%;
+}
+
+#password {
+    font-family: monospace;
+    font-size: 20px;
+    width: 97%;
+    margin-bottom: 15px;
+}
+
+.submitButton {
+    margin-bottom: 15px;
+}
+
+.backButton {
+    margin-top: 15px;
+    width: 330px;
+}
+
+.break {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body > :first-child {
+    font-size: 50px;
+    text-shadow: 5px 6px 0 black;
+    margin-top: 0;
+}
+
+.error {
+    color: red;
+    margin-bottom: 15px;
+    font-family: monospace;
+}

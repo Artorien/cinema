@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+    <link rel="stylesheet" href="/style/styleFilms.css">
+    <link href="https://fonts.cdnfonts.com/css/sporting" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="mainBody">
+<header>
+    <nav>
+        <div class="logo">
+            <h1>CinemaStar</h1>
+        </div>
+        <div>
+            <div class="userInfo" th:object="${user}">
+                <img th:src="${imageSrc}" class="userInfoImg" alt="pfp">
+                <h4 th:text="${user.getUsername()}"></h4>
+                <div class="userMenu">
+                    <div class="userMenuLinks">
+                        <a th:href="@{/practice/profile}">Profile</a>
+                        <a th:href="@{/logout}">Log Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="mainPage">
+    <div th:each="filmBlock, blockStat : ${films}"
+         th:class="${blockStat.index == 0} ? 'group1' :
+               (${blockStat.index == 1} ? 'group2' :
+               (${blockStat.index == 2} ? 'group3' : ''))">
+
+        <div th:class="${blockStat.index == 0} ? 'group1flex' :
+                   (${blockStat.index == 1} ? 'group2flex' :
+                   (${blockStat.index == 2} ? 'group3flex' : ''))">
+
+            <div th:each="film, stat : ${filmBlock}" class="item">
+                <div class="imageblock">
+                    <img th:src="@{${film.getPoster()}}" alt="image"/>
+                </div>
+                <div class="buttonBlock">
+                    <button class="watchButton"><a th:href="@{/practice/films/{id}(id=${film.getId()})}">Watch now</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="ourInfo">
+        <ul>
+            <li>Contact Us</li>
+            <li>About Us</li>
+            <li>Policy</li>
+        </ul>
+    </div>
+    <div class="production">
+        <ul>
+            <li>Partners</li>
+            <li>Privacy Policy</li>
+            <li>Buy Gift Cards</li>
+        </ul>
+    </div>
+    <div class="icons">
+        <i class='bx bxl-facebook-circle'></i>
+        <i class='bx bxl-twitter' ></i>
+        <i class='bx bxl-instagram-alt' ></i>
+    </div>
+</footer>
+<script src="/js/films.js"></script>
+</body>
+</html>
